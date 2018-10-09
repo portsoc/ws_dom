@@ -519,24 +519,6 @@ QUnit.test("duplication",
             "The two paragraphs should have the same text."
         );
 
-        assert.strictEqual(
-            paras[0].id,
-            paras[1].id,
-            "The two elements should have the same ID"
-        );
-
-        assert.strictEqual(
-          paras[0].hasChildNodes(),
-          paras[1].hasChildNodes(),
-          "The two elements should have children"
-        );
-
-        assert.propEqual(
-            paras[0].childNodes,
-            paras[1].childNodes,
-            "The two elements should have the same children"
-        );
-
 
         thingToBeDuped.parentElement.classList.add("done");
 
@@ -593,7 +575,7 @@ QUnit.test("form elements",
                 speed: 70,
                 student: true
             }
-        );
+        )
 
         window.username.value = "Jane";
         window.speed.value = 100;
@@ -607,7 +589,7 @@ QUnit.test("form elements",
                 speed: 100,
                 student: false
             }
-        );
+        )
         window.username.parentElement.parentElement.classList.add('done');
     }
 );
