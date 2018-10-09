@@ -364,7 +364,7 @@ QUnit.test("listMover",
             "Before running, list two has 3 elements."
         );
 
-        mover("#moveme", "#listtwo");
+        mover("#moveme", "#listtwo")
 
         assert.strictEqual(
             window.listone.children.length,
@@ -383,7 +383,7 @@ QUnit.test("listMover",
             "After, moveme has a new parent."
         );
 
-        mover("#moveme", "#listone");
+        mover("#moveme", "#listone")
 
         assert.strictEqual(
             window.listone.children.length,
@@ -438,7 +438,7 @@ QUnit.test("listFiller",
 
         let entries = ["Shmi", "Anakin", "Luke"];
 
-        filler(ul, entries);
+        filler(ul, entries)
 
         for (let i = 0; i < ul.children.length; i++) {
             assert.strictEqual(
