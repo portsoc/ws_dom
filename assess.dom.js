@@ -519,10 +519,11 @@ QUnit.test("duplication",
             "The two paragraphs should have the same text."
         );
 
-        assert.strictEqual(
+        assert.notEqual(
             paras[0].id,
             paras[1].id,
-            "The two elements should have the same ID"
+            "Do not have the same ID for elements. " +
+            "If you want to pass along the same information/attributes then use classes instead"
         );
 
         assert.strictEqual(
