@@ -53,8 +53,8 @@ QUnit.test("adding text",
 
         addTextTo( document.querySelector("#addto"), ' Yes!' );
         assert.strictEqual(
-          document.getElementById('addto').textContent,
-          "Does it work yet? Maybe! Yes!"
+            document.getElementById('addto').textContent,
+            "Does it work yet? Maybe! Yes!"
         );
 
         window.addto.parentElement.classList.add("done");
@@ -180,8 +180,8 @@ QUnit.test("removeAClass",
         let p = document.getElementById("helpme");
         assert.strictEqual( p.classList.length, 3 );
         assert.ok(
-          p.classList.contains("downer"),
-          "Before running, the array of classes contains `downer`."
+            p.classList.contains("downer"),
+            "Before running, the array of classes contains `downer`."
         );
 
         removeAClass(p, "downer");
@@ -364,7 +364,7 @@ QUnit.test("listMover",
             "Before running, list two has 3 elements."
         );
 
-        mover("#moveme", "#listtwo")
+        mover("#moveme", "#listtwo");
 
         assert.strictEqual(
             window.listone.children.length,
@@ -383,7 +383,7 @@ QUnit.test("listMover",
             "After, moveme has a new parent."
         );
 
-        mover("#moveme", "#listone")
+        mover("#moveme", "#listone");
 
         assert.strictEqual(
             window.listone.children.length,
@@ -438,7 +438,7 @@ QUnit.test("listFiller",
 
         let entries = ["Shmi", "Anakin", "Luke"];
 
-        filler(ul, entries)
+        filler(ul, entries);
 
         for (let i = 0; i < ul.children.length; i++) {
             assert.strictEqual(
@@ -519,6 +519,24 @@ QUnit.test("duplication",
             "The two paragraphs should have the same text."
         );
 
+        assert.ok(
+            (paras[0].id == null && paras[1].id == null) || paras[0].id !== paras[1].id,
+            "It is never a good idea to have the same ID for elements. " +
+            "If you need to duplicate IDs then it is best to use classes instead"
+        );
+
+        assert.strictEqual(
+            paras[0].hasChildNodes(),
+            paras[1].hasChildNodes(),
+            "The two elements should have children"
+        );
+
+        assert.propEqual(
+            paras[0].childNodes,
+            paras[1].childNodes,
+            "The two elements should have the same children"
+        );
+
 
         thingToBeDuped.parentElement.classList.add("done");
 
@@ -575,7 +593,7 @@ QUnit.test("form elements",
                 speed: 70,
                 student: true
             }
-        )
+        );
 
         window.username.value = "Jane";
         window.speed.value = 100;
@@ -589,7 +607,7 @@ QUnit.test("form elements",
                 speed: 100,
                 student: false
             }
-        )
+        );
         window.username.parentElement.parentElement.classList.add('done');
     }
 );
